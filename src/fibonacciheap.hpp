@@ -14,7 +14,7 @@ template<class T> class FibonacciHeap {
 
 public:
 	FibonacciHeap(bool (&function)(const T &t1, const T &t2), const T &top_infinity) : 
-	_merged(0),
+	_merged(false),
 	_size(0), 
 	_top(0),
 	_heaps(FibonacciHeapList<T>()), 
@@ -113,7 +113,7 @@ public:
 		return result; 
 	}
 
-	bool remove(FibonacciHeapNode<T> *node) {
+	void remove(FibonacciHeapNode<T> *node) {
 		decreaseNode(node);
 		pop();
 	}
