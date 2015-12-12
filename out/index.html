@@ -1,0 +1,62 @@
+<html>
+<head>
+  <link rel="stylesheet" href="alchemy.min.css"/>
+</head>
+<style>
+.alchemy text {
+  display: block !important;
+}
+</style>
+<body>
+  <div class="alchemy" id="alchemy"></div>
+
+  <script src="alchemy.min.js"></script>
+  <script type="text/javascript">
+  var config = {
+    dataSource: 'data.json',
+    directedEdges: true,
+    nodeTypes: ["root"],
+    nodeStyle: {
+      "all": {
+        "radius": 15
+      },
+      "root": {
+        "color": "#FF0000"
+      }
+    },
+    edgeTypes:["child", "parent", "next", "prev"],
+    edgeStyle: {
+      "all": {
+        "width": 4,
+        "color": "#FFFFFF",
+        "opacity": 0.8,
+        "selected": {
+          "opacity": 1
+        },
+        "highlighted": {
+          "opacity": 1
+        },
+        "hidden": {
+          "opacity": 0
+        }
+      },
+      "parent": {
+        width: 1
+      },
+      "next": {
+        "width": 1
+      },
+      "prev": {
+        "width": 1
+      }
+    },
+    curvedEdges: true,
+    fixNodes: false,
+    fixRootNodes: false,
+    forceLocked: true
+  };
+  //linkDistancefn: function(edge, k) { return 1000}
+  var alch = new Alchemy(config);
+  </script>
+</body>
+</html>
